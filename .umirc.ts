@@ -10,6 +10,10 @@ if (process.env.SITE_BUILD_ENV === 'PREVIEW') {
 }
 
 export default defineConfig({
+  //指定wly-ui转换
+  alias: {
+    'wly-ui': '../../../',
+  },
   title: 'wly UI',
   mode: 'site',
   outputPath: 'doc-site',
@@ -19,4 +23,15 @@ export default defineConfig({
   mfsu: {},
   base,
   publicPath,
+  //demo自动引入css
+  extraBabelPlugins: [
+    [
+      'babel-plugin-import',
+      {
+        libraryName: 'wly-ui',
+        libraryDirectory: 'components/',
+        style: true,
+      },
+    ],
+  ],
 });
