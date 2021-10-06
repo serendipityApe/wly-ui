@@ -2,11 +2,11 @@
 # name: Collapse 折叠面板
 # route: /components/collapse
 # menu: 组件
+
 title: Collapse 折叠面板
 nav:
-  title:组件
-group:
-  title: display
+  title: 组件
+  order: 2
 ---
 
 import CodeBox from '../../doc-comps/happy-box';

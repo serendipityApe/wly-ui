@@ -7,7 +7,8 @@ const { Panel } = Collapse;
 export default () => (
   <div>
       <Collapse>
+        <Panel header="测试1">展开</Panel>
+        <Panel header="测试2">展开</Panel>
       </Collapse>
-    <Panel header="测试">展开</Panel>
   </div>
 );
