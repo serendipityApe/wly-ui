@@ -26,17 +26,17 @@ const CollapsePanel: CollapsePanelInterface = userProps => {
     if (props.myKey) {
       if (!exp) {
         if (props.accordion) {
-          props.setActiveKey([props.myKey]);
+          props.setActiveKey!([props.myKey]);
         } else {
-          props.setActiveKey([...props.activeKey, props.myKey]);
+          props.setActiveKey!([...props.activeKey!, props.myKey]);
         }
       } else {
         // eslint-disable-next-line
         if (props.accordion) {
-          props.setActiveKey([]);
+          props.setActiveKey!([]);
         } else {
-          const arr = props.activeKey.filter(item => item !== props.myKey);
-          props.setActiveKey([...arr]);
+          const arr = props.activeKey!.filter(item => item !== props.myKey);
+          props.setActiveKey!([...arr]);
         }
       }
     } else {
