@@ -9,31 +9,37 @@ nav:
   order: 2
 ---
 
-import CodeBox from '../../doc-comps/happy-box';
-
-import BasicDemo from './demo/basic';
-import BasicDemoCode from '!raw-loader!./demo/basic';
-
 ## Collapse 折叠面板
 
 可以折叠/展开的内容区域。
 
 ### 代码演示
 
-#### 基本使用
-
-<!-- <CodeBox code={BasicDemoCode} title="" desc="">
-  <BasicDemo></BasicDemo>
-</CodeBox> -->
+#### **基本使用**
+您可以通过Panel单个使用。
 <code src="./demo/basic.tsx"></code>
 
+也可以通过Collapse包裹,使用多个。<br>(强烈建议您使用多个Panel的时候用Collapse包裹)
+<code src="./demo/group.tsx"></code>
+
+#### **嵌套使用**
+$\color{red}{目前有bug，正在紧急维护中......}$
+<code src="./demo/nesting.tsx"></code>
+#### **手风琴模式**
+每次只打开一个tab
+<code src="./demo/accordion.tsx"></code>
 ### API
 
 #### Collapse
 | 属性 | 说明 | 类型 | 默认值 |
-| ---- | ---- | ---- | ------ |
+| :---- | :---- | :---- | :------ |
+| activeKey | 当前激活 tab 面板的 key | string[] \| number[] <br>\| string \| number | - |
+| onChange | 切换面板的回调(参数为activeKey) | (keys?:type activeKey) => void | - |
+| accordion | 手风琴模式 | boolean | false | - |
 
 #### Collapse.Panel
 | 属性 | 说明 | 类型 | 默认值 |
-| ---- | ---- | ---- | ------ |
-| header | 面板头内容 | ReactNode | ------ |
+| :---- | :---- | :---- | :------ |
+| header | 面板头内容 | ReactNode | - |
+| key | 对应 activeKey | string \| number | - |
+| collapsible | 是否可折叠 | 'disabled' | - |

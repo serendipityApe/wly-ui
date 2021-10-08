@@ -1,17 +1,15 @@
-/*=============== VARIABLES CSS ===============*/
+/* =============== VARIABLES CSS =============== */
 :root{
-    /*========== Colors ==========*/
+    /* ========== Colors ========== */
     --hue-color: 225;
-
     --first-color: hsl(var(--hue-color), 48%, 35%);
     --title-color: hsl(var(--hue-color), 48%, 22%);
     --text-color: hsl(var(--hue-color), 12%, 35%);
     --body-color: hsl(var(--hue-color), 49%, 98%);
     --container-color: #FFF;
 
-    /*========== Font and typography ==========*/
+    /* ========== Font and typography ========== */
     --body-font: 'Poppins', sans-serif;
-
     --normal-font-size: .938rem;
     --small-font-size: .813rem;
     --smaller-font-size: .75rem;
@@ -22,7 +20,8 @@
         --smaller-font-size: .813rem;
     }
 }
-/*=============== collapse ===============*/
+
+/* =============== collapse =============== */
 .collapse{
     // display: grid;
     // align-content: center;
@@ -36,16 +35,16 @@
     // box-shadow: 0 12px 32px hsla(0, 0%, 20%, 0.1);
 
     &__title{
-        font-size: var(--small-font-size);
+        margin-top: .15rem;
         color: var(--title-color);
         font-weight: 400;
-        margin-top: .15rem;
+        font-size: var(--small-font-size);
         transition: .2s;
     }
     &__header{
         display: flex;
-        column-gap: .5rem;
         padding: 1.25rem 1.25rem 1.25rem 1rem;
+        column-gap: .5rem;
         cursor: pointer;
     }
     &__description{
@@ -53,30 +52,30 @@
         font-size: var(--smaller-font-size);
     }
     &__icon{
-        font-size: 1.5rem;
         height: max-content;
         color: var(--title-color);
+        font-size: 1.5rem;
         transition: .3s;
     }
 
     &__item{
-        box-shadow: 0 2px 6px hsla(0, 0%, 15%, 0.1);
-        // background-color:var(--container-color);
-        background-color: hsl(28, 100%, 97%);
-        border-radius: .25rem;
         position: relative;
+        // background-color:var(--container-color);
+        background-color: hsl(200, 100%, 97%);
+        border-radius: .25rem;
+        box-shadow: 0 2px 6px hsla(0, 0%, 15%, 0.1);
         transition: all .25s ease;
 
         &::after{
-            content: '';
-            // background-color: var(--first-color);
-            background-color: hsl(28, 100%, 77%);
-            width: 5px;
-            height: 100%;
             position: absolute;
             top: 0;
             left: 0;
+            width: 5px;
+            height: 100%;
+            // background-color: var(--first-color);
+            background-color: hsl(200, 100%, 77%);
             border-radius: .25rem 0 0 .25rem;
+            content: '';
         }
 
         // Optional colors
@@ -111,13 +110,13 @@
     }
 
     &__content{
-        overflow: hidden;
         height: 0;
+        overflow: hidden;
         transition: all .25s ease;
     }
 }
 
-/*Rotate icon and add font weight to titles*/
+/* Rotate icon and add font weight to titles */
 .collapse-open{
     // Add rotation to icon
     & .collapse__icon{

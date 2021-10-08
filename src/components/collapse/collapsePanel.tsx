@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { CollapsePanelProps, CollapseProps } from './interface';
+import { CollapsePanelProps } from './interface';
 
 interface CollapsePanelPropsPlus extends CollapsePanelProps {
-  activeKey: Array<number | string>;
-  setActiveKey: Function;
-  myKey: string | number;
+  activeKey?: Array<number | string>;
+  setActiveKey?: Function;
+  myKey?: string | number;
+  accordion?: boolean;
 }
 const defaultProps = {
   // 继承至Collapse
@@ -18,34 +19,55 @@ const CollapsePanel: CollapsePanelInterface = userProps => {
   const [prevRow, setPrevRow] = useState({});
   const content = useRef<HTMLDivElement>(null);
   if (userProps !== prevRow) {
-    // console.log(userProps);
-    // console.log(prevRow);
     setExp(judge());
     setPrevRow(userProps);
   }
   function expand() {
-    if (!exp) {
-      props.setActiveKey([...props.activeKey, props.myKey]);
-      content.current!.style.height = `${content.current!.scrollHeight}px`;
+    if (props.myKey) {
+      if (!exp) {
+        if (props.accordion) {
+          props.setActiveKey([props.myKey]);
+        } else {
+          props.setActiveKey([...props.activeKey, props.myKey]);
+        }
+      } else {
+        // eslint-disable-next-line
+        if (props.accordion) {
+          props.setActiveKey([]);
+        } else {
+          const arr = props.activeKey.filter(item => item !== props.myKey);
+          props.setActiveKey([...arr]);
+        }
+      }
     } else {
-      const arr = props.activeKey.filter(item => item !== props.myKey);
-      props.setActiveKey([...arr]);
-      content.current!.style.height = '0';
-    }
-  }
-  function judge() {
-    let res = false;
-    for (let i = 0; i < props.activeKey.length; i += 1) {
-      if (props.activeKey[i] === props.myKey) {
-        res = true;
-        break;
+      // eslint-disable-next-line
+      if (!exp) {
+        setExp(true);
+      } else {
+        setExp(false);
       }
     }
-    return res;
   }
   useEffect(() => {
-    setExp(judge());
-  }, []);
+    if (!exp) {
+      content.current!.style.height = '0';
+    } else {
+      content.current!.style.height = `${content.current!.scrollHeight}px`;
+    }
+  }, [exp]);
+  function judge() {
+    if (props.myKey) {
+      let res = false;
+      for (let i = 0; i < props.activeKey!.length; i += 1) {
+        if (props.activeKey![i] === props.myKey) {
+          res = true;
+          break;
+        }
+      }
+      return res;
+    }
+    return false;
+  }
   return (
     <div className={exp ? 'collapse__item collapse-open' : 'collapse__item'}>
       <header
@@ -55,8 +77,16 @@ const CollapsePanel: CollapsePanelInterface = userProps => {
         <i className="bx bx-plus collapse__icon"></i>
         <h3 className="collapse__title">{props.header}</h3>
       </header>
+      {/* forceRender ant是点开后不会消失了 */}
+      {/* {exp ? (
+        <div className="collapse__content" ref={content}>
+          <p className="collapse__description">{props.children}</p>
+        </div>
+      ) : (
+        <div className="collapse__content" ref={content}></div>
+      )} */}
       <div className="collapse__content" ref={content}>
-        <p className="collapse__description">{props.children}</p>
+        <div className="collapse__description">{props.children}</div>
       </div>
     </div>
   );
