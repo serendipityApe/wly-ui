@@ -1,8 +1,8 @@
 ---
-title: Happy UI
+title: wly UI
 hero:
-  title: Happy UI
-  desc: 一个有温度的UI组件
+  title: wly UI
+  desc: 一个不太寻常的ui组件
   actions:
     - text: 快速上手
       link: /getting-started

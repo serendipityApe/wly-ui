@@ -4,7 +4,5 @@ import '@testing-library/jest-dom/extend-expect';
 import Collapse from '../index';
 
 describe('Collapse', () => {
-   it('renders without error', () => {
-
-   });
+  it('renders without error', () => {});
 });

@@ -1,0 +1,78 @@
+.wly-carousel {
+  position: relative;
+  & .swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    .swiper-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: flex;
+      box-sizing: content-box;
+      .swiper-slide {
+        flex-shrink: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+    }
+  }
+  & .swiper-dots {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    display: flex !important;
+    justify-content: center;
+    margin-right: 15%;
+    margin-left: 15%;
+    padding-left: 0;
+    list-style: none;
+    li {
+      position: relative;
+      display: inline-block;
+      flex: 0 1 auto;
+      box-sizing: content-box;
+      width: 16px;
+      height: 3px;
+      margin: 0 3px;
+      padding: 0;
+      text-align: center;
+      text-indent: -999px;
+      vertical-align: top;
+      transition: all 0.5s;
+      button {
+        display: block;
+        width: 100%;
+        height: 3px;
+        padding: 0;
+        color: transparent;
+        font-size: 0;
+        background: #fff;
+        border: 0;
+        border-radius: 1px;
+        outline: none;
+        cursor: pointer;
+        opacity: 0.3;
+        transition: all 0.5s;
+      }
+    }
+    & .swiper-active {
+      width: 24px;
+      button {
+        background: #fff;
+        opacity: 1;
+      }
+    }
+  }
+  & .swiper-dots-bottom {
+    bottom: 15px;
+  }
+}

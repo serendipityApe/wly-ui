@@ -1,12 +1,16 @@
 ---
-# name: Collapse 折叠面板
-# route: /components/collapse
-# menu: 组件
-
 title: Collapse 折叠面板
+group:
+  title: Collapse 折叠面板
+  order: 2
 nav:
   title: 组件
-  order: 2
+  path: /components
+  order: 2 
+# title: Collapse 折叠面板
+# nav:
+#   title: 组件
+#   order: 2
 ---
 
 ## Collapse 折叠面板
@@ -28,6 +32,10 @@ $\color{red}{目前有bug，正在紧急维护中......}$
 #### **手风琴模式**
 每次只打开一个tab
 <code src="./demo/accordion.tsx"></code>
+
+#### **可拖拽的**
+可拖拽排序
+<code src="./demo/draggable.tsx"></code>
 ### API
 
 #### Collapse
@@ -36,6 +44,8 @@ $\color{red}{目前有bug，正在紧急维护中......}$
 | activeKey | 当前激活 tab 面板的 key | string[] \| number[] <br>\| string \| number | - |
 | onChange | 切换面板的回调(参数为activeKey) | (keys?:type activeKey) => void | - |
 | accordion | 手风琴模式 | boolean | false | - |
+| draggable | 拖拽排序 | boolean | false | - |
+| onDragged | 拖拽顺序切换后的回调(参数为panel的key值的排序数组) | (keys?:type keySorts) => void | - |
 
 #### Collapse.Panel
 | 属性 | 说明 | 类型 | 默认值 |

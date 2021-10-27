@@ -6,6 +6,7 @@ interface CollapsePanelPropsPlus extends CollapsePanelProps {
   setActiveKey?: Function;
   myKey?: string | number;
   accordion?: boolean;
+  draggable?:boolean;
 }
 const defaultProps = {
   // 继承至Collapse
@@ -69,7 +70,7 @@ const CollapsePanel: CollapsePanelInterface = userProps => {
     return false;
   }
   return (
-    <div className={exp ? 'collapse__item collapse-open' : 'collapse__item'}>
+    <div draggable={props.draggable ? true : false} className={exp ? 'collapse__item collapse-open' : 'collapse__item'}>
       <header
         className="collapse__header"
         onClick={props.collapsible === 'disabled' ? () => false : expand}
