@@ -12,16 +12,19 @@ nav:
 
 旋转木马，一组轮播的区域。
 
-### 代码演示
+## 代码演示
 
 
-#### 基本使用
+### **基本使用**
 
-<code src="./demo/basic.tsx"></code>
+<code src="./demo/basic.jsx"></code>
 
 
 
-### API
+## API
 
+### Carousel
 | 属性 | 说明 | 类型 | 默认值 |
-| ---- | ---- | ---- | ------ |
+| :---- | :---- | :---- | :------ |
+| afterChange | 切换面板后的回调函数 | function(current) | - |
+| effect | 动画效果函数 | 'fade' | 'fade' |

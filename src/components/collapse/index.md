@@ -17,37 +17,38 @@ nav:
 
 可以折叠/展开的内容区域。
 
-### 代码演示
+[collapse开发日志](https://www.wolai.com/772qXiDuDR6or5rk1mpjAi?theme=light)
+## 代码演示
 
-#### **基本使用**
+### **基本使用**
 您可以通过Panel单个使用。
-<code src="./demo/basic.tsx"></code>
+<code src="./demo/basic.jsx"></code>
 
 也可以通过Collapse包裹,使用多个。<br>(强烈建议您使用多个Panel的时候用Collapse包裹)
-<code src="./demo/group.tsx"></code>
+<code src="./demo/group.jsx"></code>
 
-#### **嵌套使用**
+### **嵌套使用**
 $\color{red}{目前有bug，正在紧急维护中......}$
-<code src="./demo/nesting.tsx"></code>
-#### **手风琴模式**
+<code src="./demo/nesting.jsx"></code>
+### **手风琴模式**
 每次只打开一个tab
-<code src="./demo/accordion.tsx"></code>
+<code src="./demo/accordion.jsx"></code>
 
-#### **可拖拽的**
+### **拖拽排序**
 可拖拽排序
-<code src="./demo/draggable.tsx"></code>
-### API
+<code src="./demo/draggable.jsx"></code>
+## API
 
-#### Collapse
+### Collapse
 | 属性 | 说明 | 类型 | 默认值 |
 | :---- | :---- | :---- | :------ |
 | activeKey | 当前激活 tab 面板的 key | string[] \| number[] <br>\| string \| number | - |
 | onChange | 切换面板的回调(参数为activeKey) | (keys?:type activeKey) => void | - |
 | accordion | 手风琴模式 | boolean | false | - |
-| draggable | 拖拽排序 | boolean | false | - |
+| draggable | 拖拽排序模式 | boolean | false | - |
 | onDragged | 拖拽顺序切换后的回调(参数为panel的key值的排序数组) | (keys?:type keySorts) => void | - |
 
-#### Collapse.Panel
+### Collapse.Panel
 | 属性 | 说明 | 类型 | 默认值 |
 | :---- | :---- | :---- | :------ |
 | header | 面板头内容 | ReactNode | - |

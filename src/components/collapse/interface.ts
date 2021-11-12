@@ -5,7 +5,7 @@ export interface CollapseProps {
   accordion?: boolean;
   onChange?: (keys?: CollapseProps['activeKey']) => void;
   draggable?: boolean;
-  onDragged?:(keys?: Array<string | number>) => void;
+  onDragged?: (keys?: Array<string | number>) => void;
 }
 export interface CollapsePanelProps {
   header: ReactNode;

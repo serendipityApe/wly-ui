@@ -4,7 +4,5 @@ import '@testing-library/jest-dom/extend-expect';
 import Carousel from '../index';
 
 describe('Carousel', () => {
-   it('renders without error', () => {
-
-   });
+  it('renders without error', () => {});
 });

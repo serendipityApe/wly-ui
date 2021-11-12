@@ -75,24 +75,26 @@ const Collapse: CollaspeInterface = userProps => {
   }
   //Panel Drag事件委托
   const [startIndex, setStartIndex] = useState(0);
-  function dragStart(event: any) {
+  function dragStart(event: React.DragEvent<HTMLDivElement>) {
     // console.log(event.target);
     setStartIndex(_index(event.target));
   }
-  function dragOver(event: any) {
+  function dragOver(event: React.DragEvent<HTMLDivElement>) {
     event.preventDefault();
     let target = event.target;
-    let curIndex = _index(target.parentNode);
-    if (
-      target.nodeName == 'HEADER' &&
-      target.className == 'collapse__header' &&
-      startIndex !== curIndex
-    ) {
-      let arr = [...sorts];
-      //交换当前鼠标位置的Index与开始时的index
-      [arr[startIndex], arr[curIndex]] = [arr[curIndex], arr[startIndex]];
-      setStartIndex(curIndex);
-      setSorts(arr);
+    if (target instanceof Element) {
+      let curIndex = _index(target.parentNode);
+      if (
+        target.nodeName == 'HEADER' &&
+        target.className == 'collapse__header' &&
+        startIndex !== curIndex
+      ) {
+        let arr = [...sorts];
+        //交换当前鼠标位置的Index与开始时的index
+        [arr[startIndex], arr[curIndex]] = [arr[curIndex], arr[startIndex]];
+        setStartIndex(curIndex);
+        setSorts(arr);
+      }
     }
   }
   const myDragOver = throttle(dragOver, 300);
