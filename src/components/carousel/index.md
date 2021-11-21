@@ -12,6 +12,7 @@ nav:
 
 旋转木马，一组轮播的区域。
 
+[carousel开发日志](https://www.wolai.com/4z7p9JSDyp2UZQ4EfVU2Vo?theme=light)
 ## 代码演示
 
 

@@ -1,15 +1,16 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { CarouselProps } from './interface';
-import SliderItem from './coreComponents/sliderItem';
+import SliderItem from './coreComponents/gralleryItem';
 
 import debounce from '../../_utils/debounce';
-import {useUpdateEffect} from '../../_utils/hooks'
+import { useUpdateEffect } from '../../_utils/hooks';
 const defaultProps = {};
 
 const Carousel: React.FC<CarouselProps> = userProps => {
   const props = { ...defaultProps, ...userProps };
   const [activeKey, setActiveKey] = useState<number>(0);
   const prevCount = useRef(React.Children.count(props.children));
+  //将children处理一下
   function getItems() {
     const { children } = props;
     return React.Children.map(children, (child, i) => {
@@ -40,8 +41,8 @@ const Carousel: React.FC<CarouselProps> = userProps => {
       window.removeEventListener('resize', debouncedResizeListener);
     };
   }, []);
-  if(props.afterChange){
-    useUpdateEffect(props.afterChange,[activeKey],activeKey);
+  if (props.afterChange) {
+    useUpdateEffect(props.afterChange, [activeKey], activeKey);
   }
   // useEffect(() => {
   //   console.log(attr);
