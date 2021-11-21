@@ -11,7 +11,9 @@
 # testing
 /coverage
 
+
 # production
+/components
 /build
 /dist
 /lib
