@@ -1,4 +1,4 @@
-## wlyUI。
+## wlyUI
 一个不太寻常的ui组件。
 
 [🚀 在线预览](https://serendipityApe.github.io/wly-ui)
