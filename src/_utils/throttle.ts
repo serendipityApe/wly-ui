@@ -3,7 +3,7 @@ export function throttle(func: Function, wait: number) {
   return function(...args: any) {
     if (!flag) return;
     flag = false;
-    func.apply(this, args);
+    func.apply(undefined, args);
     setTimeout(() => {
       flag = true;
     }, wait);

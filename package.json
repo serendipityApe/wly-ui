@@ -35,7 +35,8 @@
     "test:coverage": "jest --coverage",
     "test:update": "jest --updateSnapshot",
     "new": "plop --plopfile ./scripts/plopfile.ts",
-    "postnew": "prettier --write src/**/*{ts,tsx} --loglevel silent"
+    "postnew": "prettier --write src/**/*{ts,tsx} --loglevel silent",
+    "eslint-fix": "eslint --fix --ext .js,.ts,.tsx src"
   },
   "repository": {
     "type": "git",
@@ -60,8 +61,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "config": {

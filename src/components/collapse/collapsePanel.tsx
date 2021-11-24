@@ -31,23 +31,17 @@ const CollapsePanel: CollapsePanelInterface = userProps => {
         } else {
           props.setActiveKey!([...props.activeKey!, props.myKey]);
         }
-      } else {
-        // eslint-disable-next-line
-        if (props.accordion) {
+      } else if (props.accordion) {
           props.setActiveKey!([]);
         } else {
           const arr = props.activeKey!.filter(item => item !== props.myKey);
           props.setActiveKey!([...arr]);
         }
-      }
-    } else {
-      // eslint-disable-next-line
-      if (!exp) {
+    } else if (!exp) {
         setExp(true);
       } else {
         setExp(false);
       }
-    }
   }
   useEffect(() => {
     if (!exp) {
@@ -71,7 +65,7 @@ const CollapsePanel: CollapsePanelInterface = userProps => {
   }
   return (
     <div
-      draggable={props.draggable ? true : false}
+      draggable={!!props.draggable}
       className={exp ? 'collapse__item collapse-open' : 'collapse__item'}
     >
       <header

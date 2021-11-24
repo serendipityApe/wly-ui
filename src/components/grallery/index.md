@@ -25,7 +25,7 @@ nav:
 ### Grallery
 | 属性 | 说明 | 类型 | 默认值 |
 | :---- | :---- | :---- | :------ |
-| gap | 缝隙 | number | - |
-| itemWidth | 缝隙 | number | - |
+| gap | 间距大小 | number | 10(px) |
+| itemWidth | item宽度,请保持宽度一致 | number | -(px) |
 | showQuantity | 显示item的数量 | number | 3 |
-| itemClick | item点击事件(参数为item的索引) | number | - |
+| itemClick | item点击事件(参数为点击item的索引) | number | - |

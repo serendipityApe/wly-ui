@@ -14,5 +14,9 @@ export default () => (
     <img src="https://joeschmoe.io/api/v1/random" alt="" className="controls__img" />
     <img src="https://joeschmoe.io/api/v1/random" alt="" className="controls__img" />
     <img src="https://joeschmoe.io/api/v1/random" alt="" className="controls__img" />
+    <img src="https://joeschmoe.io/api/v1/random" alt="" className="controls__img" />
+    <img src="https://joeschmoe.io/api/v1/random" alt="" className="controls__img" />
+    <img src="https://joeschmoe.io/api/v1/random" alt="" className="controls__img" />
+    <img src="https://joeschmoe.io/api/v1/random" alt="" className="controls__img" />
   </Grallery>
 );

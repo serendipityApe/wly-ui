@@ -2,7 +2,7 @@ import React from 'react';
 
 interface Props {
   itemWidth: number;
-  itemClick?: Function;
+  itemClick: () => void;
 }
 
 const controlsItem: React.FC<Props> = props => {
@@ -14,9 +14,7 @@ const controlsItem: React.FC<Props> = props => {
       onDragStart={e => {
         e.preventDefault();
       }}
-      onClick={() => {
-        itemClick && itemClick();
-      }}
+      onClick={itemClick}
     >
       {children}
     </div>
