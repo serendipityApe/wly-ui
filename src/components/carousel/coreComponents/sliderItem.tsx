@@ -8,14 +8,14 @@ interface Props {
 
 const defaultProps = {};
 
-const GralleryItem: React.FC<Props> = userProps => {
+const SliderItem: React.FC<Props> = userProps => {
   const props = { ...defaultProps, ...userProps };
-  const GralleryItem = React.useRef<HTMLDivElement>(null);
+  const SliderItem = React.useRef<HTMLDivElement>(null);
   function initGrallery() {}
 
   return (
     <div
-      ref={GralleryItem}
+      ref={SliderItem}
       className={
         props.activeKey === props.myKey ? 'swiper-slide swiper-slide-active' : 'swiper-slide'
       }
@@ -39,4 +39,4 @@ const GralleryItem: React.FC<Props> = userProps => {
     </div>
   );
 };
-export default GralleryItem;
+export default SliderItem;

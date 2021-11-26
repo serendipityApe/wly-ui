@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { CarouselProps } from './interface';
-import SliderItem from './coreComponents/gralleryItem';
+import SliderItem from './coreComponents/sliderItem';
 
 import debounce from '../../_utils/debounce';
 import { useUpdateEffect } from '../../_utils/hooks';
