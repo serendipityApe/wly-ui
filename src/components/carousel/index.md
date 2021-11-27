@@ -20,7 +20,9 @@ nav:
 
 <code src="./demo/basic.jsx"></code>
 
-
+### **自定义swiper**
+您可以自由的定义swiper，甚至可以与其它组件联合。
+<code src="./demo/customSwiper.jsx"></code>
 
 ## API
 

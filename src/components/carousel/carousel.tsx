@@ -1,9 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { CarouselProps } from './interface';
 import SliderItem from './coreComponents/sliderItem';
-
 import debounce from '../../_utils/debounce';
 import { useUpdateEffect } from '../../_utils/hooks';
+import { cloneElement } from '../../_utils/reactNode';
+// import Grallery from '../grallery';
 
 const defaultProps = {};
 
@@ -15,10 +16,10 @@ const Carousel: React.FC<CarouselProps> = userProps => {
   function getItems() {
     const { children } = props;
     return React.Children.map(children, (child, i) => (
-        <SliderItem key={i} myKey={i} width={attr.width} activeKey={activeKey}>
-          {child}
-        </SliderItem>
-      ));
+      <SliderItem key={i} myKey={i} width={attr.width} activeKey={activeKey}>
+        {child}
+      </SliderItem>
+    ));
   }
   function initSlider() {}
   const carousel = useRef<HTMLDivElement>(null);
@@ -54,21 +55,35 @@ const Carousel: React.FC<CarouselProps> = userProps => {
       </div>
       <ul className="swiper-dots swiper-dots-bottom">
         {(() => {
-          const item = [];
-          for (let i = 0; i < prevCount.current; i++) {
-            item.push(
-              <li key={i} className={activeKey === i ? 'swiper-active' : ''}>
-                <button
-                  onClick={() => {
-                    setActiveKey(i);
-                  }}
-                >
-                  {i}
-                </button>
-              </li>,
-            );
+          if (props.grallery) {
+            const myProps = {
+              showQuantity: 3,
+              gap: 10,
+              itemWidth: 45,
+              itemClick: (k: number) => {
+                setActiveKey(k);
+              },
+              active: 'swiper-active'
+            };
+            const Grallery = cloneElement(props.grallery, myProps);
+            return Grallery;
+          } else {
+            const item = [];
+            for (let i = 0; i < prevCount.current; i++) {
+              item.push(
+                <li key={i} className={activeKey === i ? 'swiper-active' : ''}>
+                  <button
+                    onClick={() => {
+                      setActiveKey(i);
+                    }}
+                  >
+                    {i}
+                  </button>
+                </li>,
+              );
+            }
+            return item;
           }
-          return item;
         })()}
       </ul>
     </div>
