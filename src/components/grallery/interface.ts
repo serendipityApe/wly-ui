@@ -7,4 +7,6 @@ export interface Props {
   itemWidth: number | string;
   // 点击事件绑定
   itemClick?: Function;
+  //修改点击后的item的className,carousel专属，暂时不向外暴漏
+  active?: string
 }

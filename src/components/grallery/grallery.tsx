@@ -11,8 +11,10 @@ const Grallery: React.FC<Props> = userProps => {
   const [offset, setOffset] = React.useState(0);
   const [duration, setDuration] = React.useState(false);
   const itemQuantity = React.Children.count(props.children);
+  //最后一次点击Itme的索引,当前默认为0，后续加入默认索引的话记得替换
+  const [preIndex, setPreIndex] = React.useState(0);
   function getItems() {
-    const { children, itemClick } = props;
+    const { children, itemClick, active } = props;
     return React.Children.map(children, (child, i) => (
       <ControlsItem
         itemWidth={Number(itemWidth)}
@@ -20,9 +22,11 @@ const Grallery: React.FC<Props> = userProps => {
           itemClick
             ? () => {
                 itemClick(i);
+                setPreIndex(i);
               }
             : () => {}
         }
+        active={active && preIndex === i ? active : ''}
       >
         {child}
       </ControlsItem>
@@ -45,7 +49,7 @@ const Grallery: React.FC<Props> = userProps => {
       setDuration(true);
       if (offsetCopy > 0) {
         setOffset(0);
-      } else if(curr){
+      } else if (curr) {
         // 若滑动超届
         if (curr >= itemQuantity) {
           // 复位至边缘
