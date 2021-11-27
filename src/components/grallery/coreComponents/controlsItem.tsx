@@ -10,7 +10,7 @@ const controlsItem: React.FC<Props> = props => {
   return (
     <div
       className="controls-item"
-      style={{ minWidth: `${itemWidth}px` }}
+      style={{ minWidth: `${itemWidth}px`,height : `${itemWidth}px`}}
       onDragStart={e => {
         e.preventDefault();
       }}

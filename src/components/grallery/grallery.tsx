@@ -14,19 +14,19 @@ const Grallery: React.FC<Props> = userProps => {
   function getItems() {
     const { children, itemClick } = props;
     return React.Children.map(children, (child, i) => (
-        <ControlsItem
-          itemWidth={Number(itemWidth)}
-          itemClick={
-            itemClick
-              ? () => {
-                  itemClick(i);
-                }
-              : () => {}
-          }
-        >
-          {child}
-        </ControlsItem>
-      ));
+      <ControlsItem
+        itemWidth={Number(itemWidth)}
+        itemClick={
+          itemClick
+            ? () => {
+                itemClick(i);
+              }
+            : () => {}
+        }
+      >
+        {child}
+      </ControlsItem>
+    ));
   }
 
   let startX: number; // 鼠标起始位置
@@ -45,7 +45,7 @@ const Grallery: React.FC<Props> = userProps => {
       setDuration(true);
       if (offsetCopy > 0) {
         setOffset(0);
-      } else {
+      } else if(curr){
         // 若滑动超届
         if (curr >= itemQuantity) {
           // 复位至边缘
@@ -65,7 +65,6 @@ const Grallery: React.FC<Props> = userProps => {
       document.onselectstart = null;
     };
   }
-
   return (
     <div
       className="gallery-thumbs controls"
