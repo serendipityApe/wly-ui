@@ -108,12 +108,11 @@ const Collapse: CollaspeInterface = userProps => {
       [sorts],
       (() =>
         // 参数为panel的key排序数组
-         sorts.map((index: number) => {
+        sorts.map((index: number) => {
           const child = toArray(props.children)[index];
           const key = child.key || String(index);
           return key;
-        })
-      )(),
+        }))(),
     );
   }
   // func:当对应state更新时执行函数  listener:监听的state  ...args:func的参数

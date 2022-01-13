@@ -2,7 +2,6 @@
 title: Grallery 滑块
 group:
   title: Grallery 滑块
-  order: 2
 nav:
   title: 组件
   path: /components

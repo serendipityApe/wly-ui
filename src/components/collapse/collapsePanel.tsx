@@ -32,16 +32,16 @@ const CollapsePanel: CollapsePanelInterface = userProps => {
           props.setActiveKey!([...props.activeKey!, props.myKey]);
         }
       } else if (props.accordion) {
-          props.setActiveKey!([]);
-        } else {
-          const arr = props.activeKey!.filter(item => item !== props.myKey);
-          props.setActiveKey!([...arr]);
-        }
-    } else if (!exp) {
-        setExp(true);
+        props.setActiveKey!([]);
       } else {
-        setExp(false);
+        const arr = props.activeKey!.filter(item => item !== props.myKey);
+        props.setActiveKey!([...arr]);
       }
+    } else if (!exp) {
+      setExp(true);
+    } else {
+      setExp(false);
+    }
   }
   useEffect(() => {
     if (!exp) {

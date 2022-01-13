@@ -63,7 +63,7 @@ const Carousel: React.FC<CarouselProps> = userProps => {
               itemClick: (k: number) => {
                 setActiveKey(k);
               },
-              active: 'swiper-active'
+              active: 'swiper-active',
             };
             const Grallery = cloneElement(props.grallery, myProps);
             return Grallery;

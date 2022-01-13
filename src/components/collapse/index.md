@@ -2,7 +2,6 @@
 title: Collapse 折叠面板
 group:
   title: Collapse 折叠面板
-  order: 2
 nav:
   title: 组件
   path: /components

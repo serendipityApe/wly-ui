@@ -1,0 +1,49 @@
+@codeMain: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+@codeless: Lucida Grande, Helvetica Neue, Helvetica, Arial, Verdana, PingFang SC, Hiragino Sans GB,
+  STHeiti, Microsoft YaHei, WenQuanYi Micro Hei, WenQuanYi Micro Hei Mono, WenQuanYi Zen Hei,
+  WenQuanYi Zen Hei Mono, Noto Sans CJK SC, Source Han Sans CN, SimSun, sans-serif;
+@default: Consolas, Monaco, Andale Mono, Ubuntu Mono, Lucida Grande, Helvetica Neue, Helvetica, Arial,
+  Verdana, PingFang SC, Hiragino Sans GB, STHeiti, Microsoft YaHei, WenQuanYi Micro Hei,
+  WenQuanYi Micro Hei Mono, WenQuanYi Zen Hei, WenQuanYi Zen Hei Mono, Noto Sans CJK SC,
+  Source Han Sans CN, SimSun, sans-serif;
+.wly-markdown {
+  font-family: @default;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+  .markdownOutput {
+    border-style: solid;
+    border-radius: 4px 4px;
+    border-width: 0px;
+    box-sizing: border-box;
+    padding: 0.8rem;
+    height: 300px;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 1px 1px rgba(59, 66, 82, 0.14), 0px 2px 1px rgba(59, 66, 82, 0.12),
+      0px 1px 3px rgba(59, 66, 82, 0.2);
+  }
+  textarea {
+    font-family: @default;
+    background: #f5f5f5;
+    border-color: #d8d8d8;
+    border-style: solid;
+    border-radius: 4px 4px;
+    border-width: 1px;
+    resize: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    padding: 0.8rem;
+    min-height: 300px;
+    -webkit-appearance: none;
+    &:focus {
+      background: #fff;
+      border-color: #338eda;
+      outline: 0;
+    }
+  }
+}
