@@ -1,9 +1,12 @@
 ---
-name: {{pascalCase name}} {{CN}}
-route: /components/{{kebabCase name}}
-menu: 组件
+title: {{pascalCase name}} {{CN}}
+group:
+  title: {{pascalCase name}} {{CN}}
+nav:
+  title: 组件
+  path: /components
+  order: 2 
 ---
-
 import CodeBox from '../../doc-comps/happy-box';
 
 import BasicDemo from './demo/basic';

@@ -4,7 +4,5 @@ import '@testing-library/jest-dom/extend-expect';
 import Markdown from '../index';
 
 describe('Markdown', () => {
-   it('renders without error', () => {
-
-   });
+  it('renders without error', () => {});
 });
