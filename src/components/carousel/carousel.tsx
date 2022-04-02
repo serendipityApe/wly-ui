@@ -55,17 +55,32 @@ const Carousel: React.FC<CarouselProps> = userProps => {
       </div>
       <ul className="swiper-dots swiper-dots-bottom">
         {(() => {
+          console.log(React.isValidElement(props.grallery));
           if (props.grallery) {
-            const myProps = {
-              showQuantity: 3,
-              gap: 10,
-              itemWidth: 45,
-              itemClick: (k: number) => {
-                setActiveKey(k);
-              },
-              active: 'swiper-active',
+            // const myProps = {
+            //   // showQuantity: 3,
+            //   // gap: 10,
+            //   // itemWidth: 45,
+            //   // itemClick: (k: number) => {
+            //   //   setActiveKey(k);
+            //   // },
+            //   active: 'swiper-active',
+            // };
+            console.log(props.grallery);
+            const ownFn = props.grallery.props.onClick;
+            const injectFn = function(e: any) {
+              e._swiperTo = setActiveKey;
+              ownFn(e);
             };
-            const Grallery = cloneElement(props.grallery, myProps);
+            const ownFn2 = props.grallery.props.itemClick;
+            const injectFn2 = function(e: any) {
+              ownFn2(e, setActiveKey);
+            };
+            const injectProps = {
+              onClick: injectFn,
+              itemClick: injectFn2,
+            };
+            const Grallery = cloneElement(props.grallery, injectProps);
             return Grallery;
           } else {
             const item = [];

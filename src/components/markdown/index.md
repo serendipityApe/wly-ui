@@ -24,3 +24,4 @@ nav:
 ### Markdown
 | 属性 | 说明 | 类型 | 默认值 |
 | :---- | :---- | :---- | :------ |
+| children | 默认文本 | string \| undefined | - |

@@ -1,11 +1,10 @@
 import React from 'react';
 import { Props } from './interface';
-
 const defaultProps = {};
 
 const Markdown: React.FC<Props> = userProps => {
-  const props = { ...defaultProps, ...userProps };
-  const [myMarkdown, setMyMarkdown] = React.useState('');
+  const { children = '' } = { ...defaultProps, ...userProps };
+  const [myMarkdown, setMyMarkdown] = React.useState(children);
   type State = {
     output: string;
   };
@@ -116,7 +115,6 @@ const Markdown: React.FC<Props> = userProps => {
         .setNext(header3)
         .setNext(horizontal)
         .setNext(Paragraph);
-      console.log(header1);
       return header1;
     }
   }
@@ -139,7 +137,6 @@ const Markdown: React.FC<Props> = userProps => {
       if (split) {
         res[0] = true;
         res[1] = value.substring(tag.length);
-        console.log(res[1]);
       }
       return res;
     }
@@ -150,6 +147,7 @@ const Markdown: React.FC<Props> = userProps => {
       dispatch({ type: 'reset', currentLine: '' });
       markdown.ToHtml(input);
     }
+    console.log(myMarkdown);
     RenderHtmlContent(myMarkdown);
   }, [myMarkdown]);
 
@@ -206,6 +204,7 @@ const Markdown: React.FC<Props> = userProps => {
         <div className="left">
           <textarea
             className="myMarkdown"
+            defaultValue={myMarkdown}
             onChange={e => {
               e.persist();
               if (e.target instanceof HTMLTextAreaElement) {
@@ -216,7 +215,10 @@ const Markdown: React.FC<Props> = userProps => {
           ></textarea>
         </div>
         <div className="right">
-          <div className="markdownOutput" dangerouslySetInnerHTML={{ __html: state.output }}></div>
+            <div
+              className="markdownOutput"
+              dangerouslySetInnerHTML={{ __html: state.output }}
+            ></div>
         </div>
       </div>
     </div>
