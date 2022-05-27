@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\tetris"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\各种手写"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\tetrisBack"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\test"
+		},
+		{
+			"path": "D:\\anything\\start\\vue\\myself\\blacklist_Frontend"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\webRtcMDN\\webrtc-from-chat"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\resume"
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "interactive",
+		"liveServer.settings.multiRootWorkspaceName": "10"
+	}
+}
